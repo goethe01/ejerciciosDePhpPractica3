@@ -65,3 +65,14 @@ foreach(array_filter($palabras,fn($key) => $key[0] === $letra) as $value){
     echo $value . " ";
 }
 
+// Punto 6
+echo "<hr>";
+$palabras = ["php","javascript","python"];
+
+$mayusculas = array_map("strtoupper", $palabras);
+
+foreach($mayusculas as $key){
+    echo "$key ";
+}
+
+// Punto 7
