@@ -143,6 +143,52 @@ echo "Promedio ventas: $promedio_ventas";
 echo "<br>";
 echo "$nombre_persona_venta $mayor_venta ";
 
-echo "<hr>";
 
+
+
+// Punto 10
+echo "<hr>";
+$productos = [
+    ["nombre"=>"Laptop","precio"=>1200],
+    ["nombre"=>"Mouse","precio"=>25],
+    ["nombre"=>"Teclado","precio"=>80]
+];
+
+usort($productos, function($a, $b) {
+    return $a["precio"] <=> $b["precio"];
+});
+
+foreach ($productos as $producto) {
+    echo $producto["nombre"] . " - " . $producto["precio"] . PHP_EOL;
+}
+
+//Punto 11
+echo "<hr>";
+$numeros = [1,1,2,3,3,3,4,4,4,4];
+
+foreach($numeros as $numero){
+    for($i = 0; $i < $numero; $i++){
+        echo "*";
+    }
+    echo "<br>";
+}
+
+// Punto 12
+echo "<hr>";
+$palabras = ["php","java","php","python","java","php"];
+$palabras_no_repetidas = [];
+foreach($palabras as $key){
+    if(!in_array($key, $palabras_no_repetidas)){
+        $palabras_no_repetidas[] = $key;
+    }
+}
+$contador = [];
+foreach($palabras_no_repetidas as $key){
+    $contador[$key] = 1;
+    foreach($palabras as $key2){
+        if ($key === $key2){
+            $contador[$key] += 1; 
+        }
+    }
+}
 
