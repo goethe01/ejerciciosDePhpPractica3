@@ -76,3 +76,73 @@ foreach($mayusculas as $key){
 }
 
 // Punto 7
+echo "<hr>";
+$palabras = ["hola","mundo","php","programar"];
+
+function contarVocales(string $palabra): int {
+    $vocales = ['a', 'e', 'i', 'o', 'u'];
+    $contador = 0;
+
+    for ($i = 0; $i < strlen($palabra); $i++) {
+        if (in_array(strtolower($palabra[$i]), $vocales)) {
+            $contador++;
+        }
+    }
+
+    return $contador;
+}
+
+foreach ($palabras as $palabra) {
+    echo $palabra . " => " . contarVocales($palabra) . "<br>";
+}
+// Punto 8
+echo "<hr>";
+$pares = [];
+$impares = [];
+$numeros = [1,2,3,4,5,6,7];
+
+foreach($numeros as $key){
+    if ($key % 2 === 0){
+        $pares[] = $key;
+    } else {
+        $impares[] = $key;
+    }
+}
+echo "pares: ";
+
+foreach($pares as $key){
+    echo "$key ";
+}
+echo "<br>";
+echo "impares: ";
+foreach($impares as $key){
+    echo "$key ";
+}
+
+//Punto 9
+echo "<hr>";
+$ventas = [ "Juan" => 200, "Ana" => 450, "Pedro" => 150, "Laura" => 600 ];
+
+$mayor_venta = 0;
+$nombre_persona_venta = null;
+
+$total = 0;
+foreach($ventas as $key => $value){
+    $total += $value; 
+    if ($value >= $mayor_venta){
+        $mayor_venta = $value;
+        $nombre_persona_venta = $key; 
+    }
+}
+
+
+$promedio_ventas = $total/count($ventas);
+echo "Total ventas: $total";
+echo "<br>";
+echo "Promedio ventas: $promedio_ventas";
+echo "<br>";
+echo "$nombre_persona_venta $mayor_venta ";
+
+echo "<hr>";
+
+
