@@ -192,3 +192,83 @@ foreach($palabras_no_repetidas as $key){
     }
 }
 
+// Punto 13
+// Punto 14
+$matriz = [ [1,2,3], [4,5,6], [7,8,9] ];
+$suma = [];
+
+foreach($matriz as $fila){
+    foreach($fila as $columna => $valor){
+        $suma[$columna] = ($suma[$columna] ?? 0) + $valor;
+    }
+}
+
+foreach($suma as $key => $value){
+        echo "$key => $value <br>";
+}
+
+// Punto 15
+echo "<hr>";
+$estudiantes = [ 
+    ["nombre"=>"Ana","nota"=>4],
+    ["nombre"=>"Luis","nota"=>2],
+    ["nombre"=>"Carlos","nota"=>5],
+    ["nombre"=>"Maria","nota"=>3]
+];
+$estudiantes = [
+    ["nombre"=>"Ana","nota"=>4],
+    ["nombre"=>"Luis","nota"=>2],
+    ["nombre"=>"Carlos","nota"=>5],
+    ["nombre"=>"Maria","nota"=>3]
+];
+
+$aprobados = 0;
+$reprobados = 0;
+$suma = 0;
+
+foreach ($estudiantes as $estudiante) {
+    $nota = $estudiante["nota"];
+    
+    $suma += $nota;
+
+    if ($nota >= 3) {
+        $aprobados++;
+    } else {
+        $reprobados++;
+    }
+}
+
+$promedio = $suma / count($estudiantes);
+
+echo "Aprobados: $aprobados <br>";
+echo "Reprobados: $reprobados <br>";
+echo "Promedio: $promedio <br>";
+
+// Bonus
+echo "<hr>";
+$usuarios = [ 
+    ["nombre"=>"Ana","edad"=>17], 
+    ["nombre"=>"Luis","edad"=>21], 
+    ["nombre"=>"Carlos","edad"=>15], 
+    ["nombre"=>"Maria","edad"=>30] 
+];
+
+$mayores = [];
+$menores = [];
+foreach($usuarios as $key){
+    $edad = $key["edad"];
+    if ($edad >= 18){
+        $mayores[] = $key["nombre"];
+    }else{
+        $menores[] = $key["nombre"];
+    }
+}
+echo "Mayores de edad: <br>";
+foreach($mayores as $key){
+    echo "  - $key <br>";
+}
+echo "<br>";
+echo "Menores de edad: <br>";
+foreach($menores as $key){
+    echo "  - $key <br>";
+}
